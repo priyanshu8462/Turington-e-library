@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>E-Library</title>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" 
+   integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+   <link href="assets/book-svgrepo-com.svg" rel="icon">
+   <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+   <div class="background">
+      <video autoplay loop>
+         <source src="assets/background-video.mp4" type=video/mp4>
+       </video>
+   </div>
+   <div class="main">
+      <div class="foreground">
+         <div class="navbar"  id="home">
+            <ul>
+               <li><a href="#home">Home</a></li>
+               <li><a href="#add">Add</a></li>
+               <li><a href="#request">Request</a></li>
+               <li><a href="#search">Search</a></li>
+               <li><a href="#contact">Contact</a></li>
+            </ul>
+         </div>
+         <div class="content">
+            <div class="text">
+                <h1>BE ONE OF US</h1>
+                <p>Jump into the world of reading</p>
+                <button>SUBSCRIBE</button>  
+            </div>
+            <div class="social">
+               <i class="fab fa-facebook-f"></i>
+               <i class="fab fa-instagram"></i>
+               <i class="fab fa-linkedin-in"></i>
+            </div>
+         </div>
+      </div>
+
+      <div class="about-us">
+            <div>
+               <i class="fas fa-users"></i>
+               <p>2000+ USERS</p>
+            </div>
+            <div>
+               <i class="fas fa-book"></i>
+               <p>500+ BOOKS</p>
+            </div>
+            <div>
+               <i class="fas fa-clock"></i>
+               <p>24*7 AVAILABILITY</p>
+            </div>
+      </div>
+
+      <div class="skills slider" id="search">
+         <button class="prev"><i class="fas fa-chevron-left"></i></button>
+         <button class="next"><i class="fas fa-chevron-right"></i></button>
+
+         <div class="slides-container most-popular">
+            <div class="slide active">
+               <img src="assets/book1.jpg">
+               <p>
+                  Rosie Danan returns with The Intimacy Experiment, a steamy contemporary romance that is every bit as 
+                  enjoyable as her debut, The Roommate. It’s a triumph of feminist fiction, supporting the importance of 
+                  healthy emotional and physical intimacy and showing how to make the world a better place with love.
+               </p>
+            </div>
+
+            <div class="slide">
+               <img src="assets/book2.jpg">
+               <p>
+                  There is pain in every divorce story, but not every divorce story can be related by a narrator as capable 
+                  as Gina Frangello. Blow Your House Down: A Story of Family, Feminism, and Treason, Frangello’s raw, eloquent
+                  account of the demise of her marriage, is an exemplar of self-reflection, tinged with optimism about the power 
+                  to recover one’s life from the depth of suffering.
+               </p>
+            </div>
+
+            <div class="slide">
+               <img src="assets/book3.jpg">
+               <p>
+                  Native Americans have had an image problem for as long as non-­Native people have had a say in it, from the 
+                  Pilgrims to P.T. Barnum to Andrew Jackson to Hollywood movie producers. In the media, Indigenous people have 
+                  been cast as savage, ignorant and unfunny, except as the butt of jokes.
+               </p>
+            </div>
+
+            <div class="slide">
+               <img src="assets/book4.jpg">
+               <p>
+                  Queer history is both old and new. We have been gay since the dawn of time, but only recently have queer 
+                  people really started to speak our own stories into the historical record. The novelty of this—as well as 
+                  the precarious lives many LGBTQ people still live—raises its own questions: Which stories do we tell? 
+                  Relative to established narrative forms, where and how do they fit? What about the bad parts?
+               </p>
+            </div>
+         </div>
+         <button class="check-more">CHECK MORE <i class="fas fa-search"></i> </button>
+         <input class="book-search" type="search" placeholder="SEARCH">
+      </div>
+
+
+      <div class="add" id="add">
+         <h1>WANNA CONTRIBUTE ?</h1>
+         <p class="tagline">Help the fellow users by sharing resources.</p>
+         <div class="add-content">
+               <p class="description">
+                  Share new books and research articles on our platform.
+                  Write a review to reach out more and more of users.
+                  P.S. You earn $2.5 for every book you upload and a $1 for each unique verified article :). 
+               </p>
+            <img src="assets/share.svg" class="add-svg">
+         </div>
+         <button class="share">SHARE A BOOK > </button>
+      </div>
+
+      <div class="add-modal modal">
+         <form class="modal-content form" onsubmit="handleSubmit()">
+               <h1>CONTRIBUTE</h1>
+               <input type="text" placeholder="Name of the book/article" required>
+               <input type="text" placeholder="Your Name" required>
+               <input type="text" placeholder="ISBN Number (optional)">
+               <input type="text" placeholder="User ID" required>    
+               <span>UPLOAD FILE<input type="file" placeholder="Browse File" required></span>
+               <button type="submit">UPLOAD</button>
+         </form>
+      </div>
+
+      <div class="request" id="request">
+           <h1>NOT ABLE TO FIND A RESOURCE ?</h1>
+           <p class="tagline">Let us help you.</p>
+           <p class="request-description">Submit a request for a resource and help us expanding the library to more and more of customers.</p>
+           <button class="submit-request">SUBMIT A REQUEST > </button> 
+      </div>
+
+      <div class="request-modal modal">
+         <div class="modal-content">
+            <div class="request-modal-nav">
+               <ul>
+                  <li class="link active">BOOK</li>
+                  <li class="link">ARTICLE</li>
+               </ul>
+               <h1>REQUEST</h1>
+               <form class="book field form active" onsubmit="handleSubmit()">
+                  <input type="text" placeholder="Name of the book" required>
+                  <input type="text" placeholder="Your Name" required>
+                  <input type="text" placeholder="ISBN Number (optional)">
+                  <input type="text" placeholder="User ID" required>    
+                  <button type="submit">SUBMIT</button>
+               </form>
+               
+               <form class="article form field" onsubmit="handleSubmit()">
+                  <input type="text" placeholder="Topic of article" required>
+                  <input type="text" placeholder="Your Name" required>
+                  <input type="text" placeholder="User ID" required>    
+                  <button type="submit">SUBMIT</button>
+               </form>
+            </div>
+         </div>
+      </div>
+
+      <div class="contact" id="contact">
+         <h1>GET TO US</h1>
+            <form action="mailto:noturbusiness820@gmail.com?subject=get to us" method="pOST" enctype="text/plain">
+               <label for="name">Name</label>
+               <input type="text" placeholder="Name" id="name" name="name" value="" autocomplete="off">
+               <label for="email">Email</label>
+               <input type="email" placeholder="Email" id="email" name="email" value="" autocomplete="off"><br>
+               <textarea placeholder="Message" name="message" value=""></textarea><br>
+               <button type="submit" class="btn send-msg">SEND MESSAGE</button>
+            </form>
+      </div>
+
+      <div class="modal modal-success">
+         <div class="modal-content">
+            <img src="assets/icon-check.svg">
+            <p>SUCCESS !</p>   
+         </div>
+      </div>
+
+
+   </div>
+
+   <script src="index.js"></script>
+</body>
+</html>
